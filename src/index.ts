@@ -1,1 +1,1 @@
-console.log('hello word');
+export * from './databaseTransactions/queryTransaction';
