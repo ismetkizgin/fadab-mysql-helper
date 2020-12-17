@@ -1,0 +1,29 @@
+{
+  "name": "fadab-mysql-helper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "start:dev": "nodemon --watch '*.ts' --exec 'ts-node' src/index.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ismetkizgin/fadab-mysql-helper.git"
+  },
+  "keywords": [],
+  "author": "İsmet Kizgin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ismetkizgin/fadab-mysql-helper/issues"
+  },
+  "homepage": "https://github.com/ismetkizgin/fadab-mysql-helper#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.14",
+    "eslint": "^7.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
