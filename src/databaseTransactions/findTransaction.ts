@@ -1,5 +1,5 @@
-import { select } from './selectTransaction';
+import { selectAsync } from './selectTransaction';
 
 export const findOneAsync = async (tblName: string, where: object) => {
-  return (<Array<object>>await select(tblName, { where }))[0];
+  return (<Array<object>>await selectAsync(tblName, { where }))[0];
 };
