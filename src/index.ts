@@ -5,3 +5,4 @@ export * from './databaseTransactions/selectTransaction';
 export * from './databaseTransactions/updateTransaction';
 export * from './databaseTransactions/deleteTransaction';
 export * from './databaseTransactions/findTransaction';
+export * from './databaseTransactions/formatTransaction';
