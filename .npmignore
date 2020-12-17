@@ -1,1 +1,6 @@
 src
+node_modules
+lib
+fadab.config.js
+example
+fadab.config
