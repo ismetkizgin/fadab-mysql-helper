@@ -1,7 +1,7 @@
 {
   "name": "fadab-mysql-helper",
   "version": "1.0.0",
-  "description": "",
+  "description": "fadab-mysql-helper is the mysql helper package.",
   "main": "lib/index.js",
   "scripts": {
     "start:dev": "nodemon --watch '*.ts' --exec 'ts-node' src/index.ts",
@@ -12,9 +12,31 @@
     "type": "git",
     "url": "git+https://github.com/ismetkizgin/fadab-mysql-helper.git"
   },
-  "keywords": [],
-  "author": "İsmet Kizgin",
-  "license": "ISC",
+  "keywords": [
+    "node",
+    "npm",
+    "mysql",
+    "felixge",
+    "wrapper",
+    "helper",
+    "insert",
+    "update",
+    "select",
+    "escape",
+    "async",
+    "promise",
+    "defer",
+    "deferred",
+    "mysql-helper",
+    "node-mysql-helper",
+    "fadab",
+    "fadab-mysql-helper"
+  ],
+  "contributors": [
+    "İsmet Kizgin <info@ismetkizgin.com> (https://github.com/ismetkizgin)"
+  ],
+  "author": "İsmet Kizgin <info@ismetkizgin.com> (https://github.com/ismetkizgin)",
+  "license": "GNU GENERAL",
   "bugs": {
     "url": "https://github.com/ismetkizgin/fadab-mysql-helper/issues"
   },
@@ -33,5 +55,6 @@
   "dependencies": {
     "app-root-path": "^3.0.0",
     "mysql": "^2.18.1"
-  }
+  },
+  "typings": "lib/index.d.ts"
 }
