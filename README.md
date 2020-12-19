@@ -21,25 +21,13 @@ yarn add fadab-mysql-helper
 
 ## Usage
 
-The fadal.config file should be created in the project root directory. Format you connection options based on [felixge's options](https://github.com/felixge/node-mysql#connection-options).
+### Fadab Config File
 
+The fadab.config file should be created in the project root directory. Format you connection options based on [felixge's options](https://github.com/felixge/node-mysql#connection-options).
 
-### Config File
-
-* fadab.config
-* app.js
-* routes/
-  * index.js
-  * home.js
-  * auth/
-    * login.js
-    * logout.js
-    * register.js
+#### Javascript File Example
 
 ```javascript
-
-//js file
-
 module.exports = {
   mysql: {
     host: 'host',
@@ -50,12 +38,9 @@ module.exports = {
 };
 
 ```
-or 
+#### Typescript File Example
 
 ```typescript
-
-//ts file
-
 export default {
   mysql: {
     host: 'host',
@@ -69,14 +54,14 @@ export default {
 
 ### Defining Library
 
+#### Javascript Example
 ```javascript
-
 const FadabMysql = require('fadab-mysql-helper');
+```
 
-//or
-
+#### Typescript Example
+```typescript
 import * as FadabMysql from 'fadab-mysql-helper';
-
 ```
 
 ### Selecting a record
@@ -97,7 +82,7 @@ const record = await FadabMysql.selectAsync('tableName');
 console.log(record);
 
 ```
-Select işlemi için seçenekler eklenebilinir.
+Options can be added for the select operation.
 
 * **where**: A condition is created with the data sent as object.
 * **fields**: The names of the columns whose data are required in the table are sent in array format and listed.
@@ -326,6 +311,11 @@ class MysqlTransaction extends FadabHelper {
   }
 }
 ```
+
+## Next Projects
+
+* fadab-mssql-helper
+* fadab-postgresql-helper
 
 ## Support fadab-mysql-helper
 
