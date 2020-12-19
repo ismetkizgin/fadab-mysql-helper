@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/ismetkizgin/fadab-mysql-helper/compare/v1.1.0...v1.1.1) (2020-12-19)
+
+
+### Bug Fixes
+
+* error checking added for selection function ([f045321](https://github.com/ismetkizgin/fadab-mysql-helper/commit/f045321e1c6c4d912f657ef239072acbfa81beb9))
+
 ## 1.1.0 (2020-12-18)
 
 
