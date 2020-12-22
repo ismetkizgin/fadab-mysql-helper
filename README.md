@@ -286,7 +286,7 @@ export declare class FadabHelper {
   ) => Promise<unknown>;
   selectAsync(options: SelectOptions): Promise<unknown>;
   findOneAsync(where: object): Promise<object>;
-  insertAync(values: any, ignore?: boolean): Promise<unknown>;
+  insertAsync(values: any, ignore?: boolean): Promise<unknown>;
   updateAsync(values: object, where: object): Promise<unknown>;
   deleteAsync(where: object): Promise<unknown>;
 }
