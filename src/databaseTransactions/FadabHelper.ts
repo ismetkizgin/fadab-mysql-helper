@@ -20,7 +20,7 @@ export class FadabHelper {
     return findOneAsync(this.baseTable, where);
   }
 
-  insertAync(values: any, ignore?: boolean) {
+  insertAsync(values: any, ignore?: boolean) {
     return insertAsync(this.baseTable, values, ignore);
   }
 
