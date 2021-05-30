@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/ismetkizgin/fadab-mysql-helper/compare/v1.1.3...v1.2.0) (2021-05-30)
+
+
+### Features
+
+* added utils export ([1a3b3df](https://github.com/ismetkizgin/fadab-mysql-helper/commit/1a3b3dfb73bac7176f69a53e47e56007084f7cdb))
+
 ### [1.1.3](https://github.com/ismetkizgin/fadab-mysql-helper/compare/v1.1.2...v1.1.3) (2021-04-16)
 
 
