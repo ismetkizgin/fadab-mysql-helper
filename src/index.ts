@@ -7,3 +7,4 @@ export * from './databaseTransactions/deleteTransaction';
 export * from './databaseTransactions/findTransaction';
 export * from './databaseTransactions/formatTransaction';
 export * from './databaseTransactions/FadabHelper';
+export * from './utils';
