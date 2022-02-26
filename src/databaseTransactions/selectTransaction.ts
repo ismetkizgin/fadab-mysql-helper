@@ -6,7 +6,9 @@ import { SelectOptions } from '../models';
 export const selectAsync = (tableName: string, options?: SelectOptions) => {
   try {
     return queryAsync(
-      `SELECT ${options?.fields ? options.fields.toString() : '*'} FROM 
+      `SELECT ${options?.distinct ? 'DISTINCT' : ''} ${
+        options?.fields ? options.fields.toString() : '*'
+      } FROM 
       ${escapeId(tableName)} 
       ${options?.where ? getWhere(options.where) : ''} 
       ${

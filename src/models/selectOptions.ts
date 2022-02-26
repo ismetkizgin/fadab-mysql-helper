@@ -6,4 +6,5 @@ export interface SelectOptions {
   offset?: number;
   fields?: Array<string>;
   orderBy?: OrderBy;
+  distinct?: boolean;
 }
