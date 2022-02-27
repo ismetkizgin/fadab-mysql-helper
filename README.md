@@ -85,6 +85,7 @@ console.log(record);
 Options can be added for the select operation.
 
 - **where**: A condition is created with the data sent as object.
+- **distinct**:  The data taken with this parameter receiving the Boolean value is unique.(Default:false)
 - **fields**: The names of the columns whose data are required in the table are sent in array format and listed.
 - **orderBy**: Specifies by which columns the listed data should be sorted and how;
   - **fields**: The names of the table columns that need to be sorted are sent as an array.
@@ -130,6 +131,95 @@ const records = await FadabMysql.selectAsync('tableName', {
   offset: 1
 });
 console.log(records);
+```
+
+#### Advanced Query Examples
+
+```javascript
+const orderBy = {
+    filed: ["FirstName", "LastName"]
+    ranking: "ASC"
+};
+
+const where = [
+  {
+    key: 'FirstName',
+    value: 'ismet',
+    conditionType: 'eq'
+  },
+  {
+    key: 'LastName',
+    value: 'kizgin',
+    conditionType: 'eq'
+  },
+  {
+    key: 'Age',
+    value: 18,
+    conditionType: 'gte'
+  }
+];
+
+const records = await FadabMysql.selectAsync('tableName', { orderBy, where, limit: 2, offset: 1 });
+console.log(records);
+```
+
+```javascript
+const orderBy = {
+    filed: ["FirstName", "LastName"]
+    ranking: "ASC"
+};
+
+const where = {
+  _and: {
+    FirstName: 'ismet',
+    LastName: 'kizgin'
+  },
+  _or: [
+    {
+      key: 'Age',
+      value: 18,
+      conditionType: 'gte'
+    },
+    {
+      key: 'Age',
+      value: 10,
+      conditionType: 'lte'
+    }
+  ]
+};
+
+const records = await FadabMysql.selectAsync('tableName', { orderBy, where, limit: 2, offset: 1 });
+console.log(records);
+```
+#### Count 
+
+```javascript
+const total = await FadabMysql.countAsync('tableName');
+console.log(total);
+```
+
+```javascript
+const where = {
+  _and: {
+    FirstName: 'ismet',
+    LastName: 'kizgin'
+  },
+  _or: [
+    {
+      key: 'Age',
+      value: 18,
+      conditionType: 'gte'
+    },
+    {
+      key: 'Age',
+      value: 10,
+      conditionType: 'lte'
+    }
+  ]
+};
+
+const total = await FadabMysql.countAsync('tableName', { where });
+console.log(total);
 ```
 
 #### Find One
@@ -178,6 +268,40 @@ FadabMysql.insertAsync('tblUser', insert)
 // or
 
 const info = await FadabMysql.insertAsync('tblUser', insert);
+console.log(info);
+
+//info is an object with affectedRows and insertId
+```
+
+_There is also a boolean 3rd argument, true if you want "INSERT IGNORE"_
+
+### Multi insert records
+
+```javascript
+const insert = [
+  {
+    EmailAddress: 'info@ismetkizgin.com',
+    FirstName: 'İsmet',
+    LastName: 'Kizgin'
+  },
+  {
+    EmailAddress: 'info1@ismetkizgin.com',
+    FirstName: 'İsmet',
+    LastName: 'Kizgin'
+  }
+];
+
+FadabMysql.bulkInsertAsync('tblUser', insert)
+  .then(function (info) {
+    console.log('New User Entered!', info);
+  })
+  .catch(function (err) {
+    console.log('Error creating new user, mysql error:', err.message);
+  });
+
+// or
+
+const info = await FadabMysql.bulkInsertAsync('tblUser', insert);
 console.log(info);
 
 //info is an object with affectedRows and insertId
@@ -289,6 +413,8 @@ export declare class FadabHelper {
   insertAsync(values: any, ignore?: boolean): Promise<unknown>;
   updateAsync(values: object, where: object): Promise<unknown>;
   deleteAsync(where: object): Promise<unknown>;
+  countAsync(options?: CountOptions): Promise<number>;
+  bulkInsertAsync(values: Array<DynamicObject>, ignore?: boolean): Promise<unknown>;
 }
 ```
 
