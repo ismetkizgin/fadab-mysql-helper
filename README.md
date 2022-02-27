@@ -413,7 +413,7 @@ export declare class FadabHelper {
   insertAsync(values: any, ignore?: boolean): Promise<unknown>;
   updateAsync(values: object, where: object): Promise<unknown>;
   deleteAsync(where: object): Promise<unknown>;
-  countAsync(options?: CountOptions): Promise<Count>;
+  countAsync(options?: CountOptions): Promise<number>;
   bulkInsertAsync(values: Array<DynamicObject>, ignore?: boolean): Promise<unknown>;
 }
 ```
