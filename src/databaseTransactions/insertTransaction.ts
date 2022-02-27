@@ -1,9 +1,10 @@
 import { queryAsync } from './queryTransaction';
 import { escapeId } from './escapeTransaction';
+import { DynamicObject } from '../models';
 
 export const insertAsync = (
   tableName: string,
-  values: any,
+  values: DynamicObject,
   ignore?: boolean
 ) => {
   return queryAsync(
