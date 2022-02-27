@@ -4,11 +4,13 @@ import { findOneAsync } from './findTransaction';
 import { insertAsync } from './insertTransaction';
 import { updateAsync } from './updateTransaction';
 import { deleteAsync } from './deleteTransaction';
+import { countAsync } from './countTransactions';
 import {
   SelectOptions,
   Where,
   DynamicObject,
-  WhereAdvancedObject
+  WhereAdvancedObject,
+  CountOptions
 } from '../models';
 
 export class FadabHelper {
@@ -38,5 +40,9 @@ export class FadabHelper {
 
   deleteAsync(where: Where | DynamicObject) {
     return deleteAsync(this.baseTable, where);
+  }
+
+  countAsync(options?: CountOptions) {
+    return countAsync(this.baseTable, options);
   }
 }

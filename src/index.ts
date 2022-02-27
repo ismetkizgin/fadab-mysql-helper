@@ -8,3 +8,4 @@ export * from './databaseTransactions/findTransaction';
 export * from './databaseTransactions/formatTransaction';
 export * from './databaseTransactions/FadabHelper';
 export * from './utils';
+export * from './databaseTransactions/countTransactions';
