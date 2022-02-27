@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/ismetkizgin/fadab-mysql-helper/compare/v1.2.1...v1.3.0) (2022-02-27)
+
+
+### Features
+
+* add advanced condition property ([01ec0a3](https://github.com/ismetkizgin/fadab-mysql-helper/commit/01ec0a3dcc14925f5050bbe73bceb49414456667))
+* add bulk insert transaction ([1bd8937](https://github.com/ismetkizgin/fadab-mysql-helper/commit/1bd8937773bd2b508ae1b9eb3f5efc1ef1207d04))
+* add count transaction ([79ac358](https://github.com/ismetkizgin/fadab-mysql-helper/commit/79ac358e690a4cd8bb85034f5bec064dcb0d941a))
+* add distinct property ([0afe3cf](https://github.com/ismetkizgin/fadab-mysql-helper/commit/0afe3cfa0941b6a002caf51257c45dc5940d121e))
+* add numeric comparison process query types ([7ce2745](https://github.com/ismetkizgin/fadab-mysql-helper/commit/7ce27452fef7c4fe4a5f394f5715686f0b93353f))
+
 ### [1.2.1](https://github.com/ismetkizgin/fadab-mysql-helper/compare/v1.2.0...v1.2.1) (2021-05-30)
 
 ## [1.2.0](https://github.com/ismetkizgin/fadab-mysql-helper/compare/v1.1.3...v1.2.0) (2021-05-30)
