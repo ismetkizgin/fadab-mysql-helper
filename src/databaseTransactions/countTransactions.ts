@@ -6,15 +6,15 @@ import { CountOptions, Count } from '../models';
 export const countAsync = async (
   tableName: string,
   options?: CountOptions
-): Promise<Count> => {
+): Promise<number> => {
   try {
-    return (<Array<object>>await queryAsync(
-      `SELECT COUNT(${options?.distinct ? 'DISTINCT' : ''} ${
-        options?.fields ? options.fields.toString() : '*'
-      }) as total FROM 
+    return ((<Array<object>>await queryAsync(
+        `SELECT COUNT(${options?.distinct ? 'DISTINCT' : ''} ${
+          options?.fields ? options.fields.toString() : '*'
+        }) as total FROM 
         ${escapeId(tableName)} 
         ${options?.where ? getWhere(options.where) : ''}`
-    ))[0] as Count;
+      ))[0] as Count).total;
   } catch (err) {
     throw err;
   }
