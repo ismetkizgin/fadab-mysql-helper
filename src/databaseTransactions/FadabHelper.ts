@@ -5,6 +5,7 @@ import { insertAsync } from './insertTransaction';
 import { updateAsync } from './updateTransaction';
 import { deleteAsync } from './deleteTransaction';
 import { countAsync } from './countTransactions';
+import { bulkInsertAsync } from './bulkInsertTransaction';
 import {
   SelectOptions,
   Where,
@@ -44,5 +45,9 @@ export class FadabHelper {
 
   countAsync(options?: CountOptions) {
     return countAsync(this.baseTable, options);
+  }
+
+  bulkInsertAsync(values: Array<DynamicObject>, ignore?: boolean) {
+    return bulkInsertAsync(this.baseTable, values, ignore);
   }
 }

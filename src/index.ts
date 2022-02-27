@@ -9,3 +9,4 @@ export * from './databaseTransactions/formatTransaction';
 export * from './databaseTransactions/FadabHelper';
 export * from './utils';
 export * from './databaseTransactions/countTransactions';
+export * from './databaseTransactions/bulkInsertTransaction';
