@@ -78,6 +78,14 @@ const advenedCondition = (object: WhereAdvancedObject): string => {
       return `${Mysql.escapeId(object.key)} in (${inValue})`;
     case 'like':
       return `${Mysql.escapeId(object.key)} like ${Mysql.escape(object.value)}`;
+    case 'gt':
+      return `${Mysql.escapeId(object.key)} > ${Mysql.escape(object.value)}`;
+    case 'gte':
+      return `${Mysql.escapeId(object.key)} >= ${Mysql.escape(object.value)}`;
+    case 'lt':
+      return `${Mysql.escapeId(object.key)} < ${Mysql.escape(object.value)}`;
+    case 'lte':
+      return `${Mysql.escapeId(object.key)} <= ${Mysql.escape(object.value)}`;
     default:
       return '';
   }
