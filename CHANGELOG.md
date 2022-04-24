@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/ismetkizgin/fadab-mysql-helper/compare/v1.3.0...v1.4.0) (2022-04-24)
+
+
+### Features
+
+* add advanced sorting query feature ([b10b6de](https://github.com/ismetkizgin/fadab-mysql-helper/commit/b10b6de278dfdfd7f39ed0c188d13d745e95b865))
+* add is and is not to advanced condition feature ([d709120](https://github.com/ismetkizgin/fadab-mysql-helper/commit/d70912089c824d0b76387810aa9f5a8f3c17a9de))
+* create upsert transaction ([54063e8](https://github.com/ismetkizgin/fadab-mysql-helper/commit/54063e84c47b96330244f8a0a83d4a441e055a3c))
+
 ## [1.3.0](https://github.com/ismetkizgin/fadab-mysql-helper/compare/v1.2.1...v1.3.0) (2022-02-27)
 
 
