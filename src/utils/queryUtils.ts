@@ -1,5 +1,5 @@
 import Mysql from 'mysql';
-import { Where, DynamicObject, WhereAdvancedObject } from '../models';
+import { Where, DynamicObject, WhereAdvancedObject, OrderBy } from '../models';
 
 export const createWhere = (
   objects: Where | DynamicObject | Array<WhereAdvancedObject>
@@ -89,4 +89,17 @@ const advenedCondition = (object: WhereAdvancedObject): string => {
     default:
       return '';
   }
+};
+
+export const createOrderBy = (
+  objects: OrderBy | Array<OrderBy>,
+  isRandom?: boolean
+) => {
+  let orderBy = [];
+  if (isRandom) orderBy.push('RAND()');
+  if (Array.isArray(objects))
+    for (const object of objects)
+      orderBy.push(`${object.field} ${object.ranking}`);
+  else orderBy.push(`${objects.field} ${objects.ranking}`);
+  return orderBy.length > 0 ? `ORDER BY ${orderBy.toString()}` : '';
 };

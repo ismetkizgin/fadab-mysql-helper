@@ -3,3 +3,4 @@ export * from './where';
 export * from './dynamicObject';
 export * from './countOptions';
 export * from './count';
+export * from './orderBy';

@@ -7,6 +7,7 @@ export interface SelectOptions {
   limit?: number;
   offset?: number;
   fields?: Array<string>;
-  orderBy?: OrderBy;
+  orderBy?: OrderBy | Array<OrderBy>;
+  isRandom?: boolean;
   distinct?: boolean;
 }
