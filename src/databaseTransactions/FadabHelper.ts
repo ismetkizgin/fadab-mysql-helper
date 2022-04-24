@@ -5,6 +5,7 @@ import { insertAsync } from './insertTransaction';
 import { updateAsync } from './updateTransaction';
 import { deleteAsync } from './deleteTransaction';
 import { countAsync } from './countTransactions';
+import { upsertAsync } from './upsertTransaction';
 import { bulkInsertAsync } from './bulkInsertTransaction';
 import {
   SelectOptions,
@@ -28,7 +29,7 @@ export class FadabHelper {
     return findOneAsync(this.baseTable, where);
   }
 
-  insertAsync(values: any, ignore?: boolean) {
+  insertAsync(values: DynamicObject, ignore?: boolean) {
     return insertAsync(this.baseTable, values, ignore);
   }
 
@@ -49,5 +50,9 @@ export class FadabHelper {
 
   bulkInsertAsync(values: Array<DynamicObject>, ignore?: boolean) {
     return bulkInsertAsync(this.baseTable, values, ignore);
+  }
+
+  upsertAsync(values: DynamicObject) {
+    return upsertAsync(this.baseTable, values);
   }
 }
