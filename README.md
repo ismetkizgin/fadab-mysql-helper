@@ -92,6 +92,7 @@ Options can be added for the select operation.
   - **ranking**: ASC or DESC property is specified and sorting is performed.
 - **limit**: The amount of data to be listed is specified.
 - **offset**: Specifies from which index to start the data to be listed.
+- **isRandom**: Lists random data.
 
 ```javascript
 const where = {
@@ -106,9 +107,7 @@ console.log(records);
 
 ```javascript
 const orderBy = {
-  fields: 'FirstName',
-  // or
-  // filed: ["FirstName", "LastName"]
+  field: 'FirstName',
   ranking: 'ASC'
 };
 
@@ -137,7 +136,7 @@ console.log(records);
 
 ```javascript
 const orderBy = {
-    filed: ["FirstName", "LastName"]
+    field: ["FirstName", "LastName"]
     ranking: "ASC"
 };
 
@@ -164,10 +163,16 @@ console.log(records);
 ```
 
 ```javascript
-const orderBy = {
-    filed: ["FirstName", "LastName"]
+const orderBy = [
+  {
+    field: "FirstName"
     ranking: "ASC"
-};
+  },
+  {
+    field: "LastName",
+    ranking: "ASC"
+  }
+];
 
 const where = {
   _and: {
@@ -233,10 +238,16 @@ console.log(records);
 #### Advanced Example
 
 ```javascript
-const orderBy = {
-    filed: ["FirstName", "LastName"]
+const orderBy = [
+  {
+    field: "FirstName"
     ranking: "ASC"
-};
+  },
+  {
+    field: "LastName",
+    ranking: "ASC"
+  }
+];
 
 const where = {
     FirstName: "ismet"
