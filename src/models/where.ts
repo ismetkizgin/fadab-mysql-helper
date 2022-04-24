@@ -8,5 +8,15 @@ export interface Where {
 export interface WhereAdvancedObject {
   key: string;
   value: any;
-  conditionType: 'eq' | 'not_eq' | 'like' | 'in' | 'gt' | 'gte' | 'lt' | 'lte';
+  conditionType:
+    | 'eq'
+    | 'not_eq'
+    | 'like'
+    | 'in'
+    | 'gt'
+    | 'gte'
+    | 'lt'
+    | 'lte'
+    | 'is'
+    | 'not_is';
 }
