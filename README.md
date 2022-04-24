@@ -411,21 +411,19 @@ var noSqlInject = FadabMysql.escapeId(value);
 _Class content_
 
 ```typescript
-import { SelectOptions } from '../models';
+import { SelectOptions, Where, DynamicObject, WhereAdvancedObject, CountOptions } from '../models';
 export declare class FadabHelper {
-  protected baseTable: string;
-  constructor();
-  queryAsync: (
-    query: string,
-    values?: object | object[] | undefined
-  ) => Promise<unknown>;
-  selectAsync(options: SelectOptions): Promise<unknown>;
-  findOneAsync(where: object): Promise<object>;
-  insertAsync(values: any, ignore?: boolean): Promise<unknown>;
-  updateAsync(values: object, where: object): Promise<unknown>;
-  deleteAsync(where: object): Promise<unknown>;
-  countAsync(options?: CountOptions): Promise<number>;
-  bulkInsertAsync(values: Array<DynamicObject>, ignore?: boolean): Promise<unknown>;
+    protected baseTable: string;
+    constructor();
+    queryAsync: (query: string, values?: object | object[] | undefined) => Promise<unknown>;
+    selectAsync(options: SelectOptions): Promise<unknown>;
+    findOneAsync(where: Where | DynamicObject): Promise<object>;
+    insertAsync(values: DynamicObject, ignore?: boolean): Promise<unknown>;
+    updateAsync(values: DynamicObject, where: Where | DynamicObject | Array<WhereAdvancedObject>): Promise<unknown>;
+    deleteAsync(where: Where | DynamicObject): Promise<unknown>;
+    countAsync(options?: CountOptions): Promise<number>;
+    bulkInsertAsync(values: Array<DynamicObject>, ignore?: boolean): Promise<unknown>;
+    upsertAsync(values: DynamicObject): Promise<unknown>;
 }
 ```
 
