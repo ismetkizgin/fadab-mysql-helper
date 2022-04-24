@@ -1,6 +1,6 @@
 import { queryAsync } from './queryTransaction';
 import { escapeId } from './escapeTransaction';
-import { getWhere, getLimitOffset } from '../utils';
+import { createWhere, getLimitOffset } from '../utils';
 import { SelectOptions } from '../models';
 
 export const selectAsync = (tableName: string, options?: SelectOptions) => {
@@ -10,7 +10,7 @@ export const selectAsync = (tableName: string, options?: SelectOptions) => {
         options?.fields ? options.fields.toString() : '*'
       } FROM 
       ${escapeId(tableName)} 
-      ${options?.where ? getWhere(options.where) : ''} 
+      ${options?.where ? createWhere(options.where) : ''} 
       ${
         options?.orderBy
           ? `ORDER BY ${options.orderBy.fields.toString()} ${

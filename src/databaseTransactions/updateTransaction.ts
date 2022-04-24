@@ -1,6 +1,6 @@
 import { queryAsync } from './queryTransaction';
 import { escapeId } from './escapeTransaction';
-import { getWhere } from '../utils';
+import { createWhere } from '../utils';
 import { Where, DynamicObject, WhereAdvancedObject } from '../models';
 
 export const updateAsync = (
@@ -9,7 +9,7 @@ export const updateAsync = (
   where: Where | DynamicObject | Array<WhereAdvancedObject>
 ) => {
   return queryAsync(
-    `UPDATE ${escapeId(tableName)} SET ? ${getWhere(where)}`,
+    `UPDATE ${escapeId(tableName)} SET ? ${createWhere(where)}`,
     values
   );
 };

@@ -1,10 +1,10 @@
 import Mysql from 'mysql';
 import { Where, DynamicObject, WhereAdvancedObject } from '../models';
 
-export const getWhere = (
+export const createWhere = (
   objects: Where | DynamicObject | Array<WhereAdvancedObject>
 ) => {
-  let where = createWhere(objects);
+  let where = _createWhere(objects);
   return where === '' ? '' : `WHERE ${where}`;
 };
 
@@ -14,7 +14,7 @@ export const getLimitOffset = (limit?: number, offset?: number) => {
     : `LIMIT ${offset},${limit}`;
 };
 
-const createWhere = (
+const _createWhere = (
   objects: Where | DynamicObject | Array<WhereAdvancedObject>,
   conditionKey?: string
 ): string => {
@@ -33,8 +33,8 @@ const createObjectWhere = (
     if (key === '_or' || key === '_and')
       where +=
         where === ''
-          ? createWhere(value, key)
-          : ` and ${createWhere(value, key)}`;
+          ? _createWhere(value, key)
+          : ` and ${_createWhere(value, key)}`;
     else
       where +=
         where === ''
