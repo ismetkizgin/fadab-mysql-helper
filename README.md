@@ -136,7 +136,7 @@ console.log(records);
 
 ```javascript
 const orderBy = {
-    field: ["FirstName", "LastName"]
+    field: "FirstName",
     ranking: "ASC"
 };
 
