@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/ismetkizgin/fadab-mysql-helper/compare/v1.4.0...v1.4.1) (2022-04-25)
+
+
+### Bug Fixes
+
+* fix for sort error ([a873edf](https://github.com/ismetkizgin/fadab-mysql-helper/commit/a873edfa8752c3af09286ede81d2eaa26cc27eb5))
+
 ## [1.4.0](https://github.com/ismetkizgin/fadab-mysql-helper/compare/v1.3.0...v1.4.0) (2022-04-24)
 
 
