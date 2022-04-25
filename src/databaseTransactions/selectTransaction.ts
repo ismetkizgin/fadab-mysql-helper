@@ -11,7 +11,11 @@ export const selectAsync = (tableName: string, options?: SelectOptions) => {
       } FROM 
       ${escapeId(tableName)} 
       ${options?.where ? createWhere(options.where) : ''} 
-      ${options?.orderBy && createOrderBy(options.orderBy, options?.isRandom)}
+      ${
+        options?.orderBy
+          ? createOrderBy(options.orderBy, options?.isRandom)
+          : ''
+      }
       ${getLimitOffset(options?.limit, options?.offset)}`
     );
   } catch (err) {
