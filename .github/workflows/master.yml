@@ -1,0 +1,19 @@
+name: Publush NPM
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+  
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - run: npm install
+      - run: npm run build
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_ACCESS_KEY }}
