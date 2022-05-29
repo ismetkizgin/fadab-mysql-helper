@@ -1,6 +1,6 @@
 {
   "name": "fadab-mysql-helper",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "fadab-mysql-helper is the mysql helper package.",
   "main": "lib/index.js",
   "scripts": {
