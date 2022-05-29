@@ -1,4 +1,4 @@
-# fadab-mysql-helper
+# Fadab MySQL Helper
 
 A lightweight Promise-based wrapper and helper for felixge's node-Mysql.
 
@@ -344,6 +344,31 @@ FadabMysql.updateAsync('tblUser', update, where)
 // or
 
 const info = await FadabMysql.updateAsync('tblUser', update, where);
+console.log(info);
+
+//info is an object with affectedRows, changedRows
+```
+
+### Upsert a record
+
+```javascript
+var user = {
+  EmailAddress: 'info@ismetkizgin.com',
+  FirstName: 'İsmet',
+  LastName: 'Kizgin'
+};
+
+FadabMysql.upsertAsync('tblUser', user)
+  .then(function (info) {
+    console.log('User Updated!', info);
+  })
+  .catch(function (err) {
+    console.log('Error updating record, mysql error:', err.message);
+  });
+
+// or
+
+const info = await FadabMysql.upsertAsync('tblUser', update);
 console.log(info);
 
 //info is an object with affectedRows, changedRows
